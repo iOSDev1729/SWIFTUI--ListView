@@ -14,44 +14,85 @@ struct ContentView: View {
     
     
     var body: some View {
-        HStack {
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.blue,Color.white]), startPoint: /*@START_MENU_TOKEN@*/.topLeading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottomTrailing/*@END_MENU_TOKEN@*/).ignoresSafeArea()
+            
             VStack {
-        Color.orange
-            .padding(.all)
-        
-        Text("Radhika").padding()
-        Image("balatripurasundari")
-        
-        List(myArray, id: \.self) {Text($0)}
-        
-                List {
-                    Image(systemName: "list.dash")
-                    Text("Second")
-                    Button(action: {
-                        print("Action")
-                    }) {
-                        Text("Button")
+               
+                Text("IndianWeather").foregroundColor(.white)
+                    .font(.largeTitle)
+                    .frame(width: 350, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding()
+                
+                VStack {
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .resizable()
+                        .frame(width: 180, height: 150)
+                    
+                    
+                    Text("76°")
+                        .font(.system(size: 65, weight: .medium))
+                        .foregroundColor(.white)
+                        .frame(width: 150, height: 50)
+                    
+                    HStack {
+                        VStack {
+                        Text("Tue").padding()
+                            .foregroundColor(.white)
+                        
+                        Image(systemName: "sun.max.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                        Text("45°")
+                            .font(.system(size: 40, weight: .light))
+                            .foregroundColor(.white).padding()
+                        
                     }
-                    ForEach(1..<50) { index in
-                        Text("\(index)")
-                    }
+                        VStack {
+                            Text("Tue").padding()
+                                .foregroundColor(.white)
+                            
+                            Image(systemName: "sun.max.fill")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Text("45°")
+                                .font(.system(size: 40, weight: .light))
+                                .foregroundColor(.white).padding()
+                        }
+                        VStack {
+                            Text("Tue").padding()
+                                .foregroundColor(.white)
+                            
+                            Image(systemName: "sun.max.fill")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Text("45°")
+                                .font(.system(size: 40, weight: .light))
+                                .foregroundColor(.white).padding()
+                        }
+                        VStack {
+                            Text("Tue").padding()
+                                .foregroundColor(.white)
+                            
+                            Image(systemName: "sun.max.fill")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Text("45°")
+                                .font(.system(size: 40, weight: .light))
+                                .foregroundColor(.white).padding()
+                        }
+                        
                 }
-                .font(.headline)
-                .clipped()
-       
+                    
+                Spacer()
+                   }
             }
-    
-       // Text("Hello, world!")
-           // .padding()
-    }
-
-/*extension ContentView {
-    class ViewModel:ObservedObject {
-        @Published var users = [User]()
         
+            
+            
+            }
 }
-}*/
-    }
 }
 
 //MARK:
@@ -59,6 +100,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
             
             
     }
