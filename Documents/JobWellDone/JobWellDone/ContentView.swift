@@ -8,40 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-   var body: some View {
     
-        ZStack {         // Background view fill out entire screen
-            LinearGradient(gradient: Gradient(colors: [Color.blue,Color.white]), startPoint: /*@START_MENU_TOKEN@*/.topLeading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottomTrailing/*@END_MENU_TOKEN@*/).ignoresSafeArea()
+    @State private var isNight = false
+    
+   var body: some View {
+    //MARK: Background view fill out entire screen
+    ZStack {
+        //BackgroundView(topColor: isNight ? .black : .blue,bottomColor: isNight ? .gray : Color("LightBlue1"))
+        BackgroundView(isNight: $isNight)
+        //Binding Variable. Please refer BackgroundView structure code below
             
 //MARK: //On top of ZStack, all UIView elements will be arranged vertically along with the specified frame contraints
             
-        VStack {
+            VStack {
                
-                Text("IndianWeather").foregroundColor(.white)
-                    .font(.largeTitle)
-                    .frame(width: 350, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    //MARK: frame constraints
-                    .padding()
+                CityTextView(cityName: "Indian Weather,IN")
                 
-        VStack {
-                    Image(systemName: "cloud.sun.fill")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 180, height: 150)
-                    
-                    
-                    Text("76°")
-                        .font(.system(size: 65, weight: .medium))
-                        .foregroundColor(.white)
-                        .frame(width: 150, height: 50)
-        }
-            Spacer()
+                CityImageAndTemperatureView(
+                    imageName: "wind.snow",
+                    cityTemperature: 76)
             
  //MARK: UIView will be arranged (embedded) horizontally on top of vertical stack
         
             HStack(spacing:7) {
+ //MARK: All WeatherDayViews are in VStack. Refer below extracted subview code
                 WeatherDayView(dayOfWeek: "TUE",
-                                imageName: "cloud.bolt.rain.fill",
+                                imageName:"cloud.bolt.rain.fill",
                                 temperature: 77)
                 WeatherDayView(dayOfWeek: "WED",
                                 imageName: "cloud.moon",
@@ -57,11 +49,16 @@ struct ContentView: View {
                                temperature: 67)
                 
     }
-            Spacer()
-            
-            Text("Change Date And Time")
+            .padding(.bottom,70)
+                
+                Button {
+                    print("tapped")
+                    isNight.toggle()
+                }label:{
+                ButtonView(titile: "Change Day Time", textColor: .blue, backgroundColor: .white)
+                }
                     
-    Spacer()
+                Spacer()
     }
             }
         
@@ -98,8 +95,57 @@ struct WeatherDayView: View {
                 .frame(width: 40, height:40)
             Text("\(temperature)")
                 .font(.system(size: 28, weight: .bold))
-                .foregroundColor(.blue)
+                .foregroundColor(.white)
                 .padding()
         }
+    }
+}
+
+struct BackgroundView: View {
+    //var topColor: Color
+//    var bottomColor: Color
+    @Binding var isNight: Bool
+    var body: some View {
+       /* LinearGradient(gradient: Gradient(colors:  [topColor,bottomColor]),
+              startPoint : /*@START_MENU_TOKEN@*/.topLeading/*@END_MENU_TOKEN@*/,
+              endPoint: /*@START_MENU_TOKEN@*/.bottomTrailing/*@END_MENU_TOKEN@*/)
+              .ignoresSafeArea()*/
+        LinearGradient(gradient: Gradient(colors:  [isNight ? .black : .blue ,isNight ? .gray : Color("lightBlue")]),
+               startPoint : /*@START_MENU_TOKEN@*/.topLeading/*@END_MENU_TOKEN@*/,
+               endPoint: /*@START_MENU_TOKEN@*/.bottomTrailing/*@END_MENU_TOKEN@*/)
+               .ignoresSafeArea()
+    }
+}
+
+struct CityTextView: View {
+    var cityName: String
+    var body: some View {
+        Text(cityName)
+            .foregroundColor(.white)
+            .font(.largeTitle)
+            .frame(width: 300, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            //MARK: frame constraints
+            .padding()
+    }
+}
+
+
+struct CityImageAndTemperatureView: View {
+    var imageName: String
+    var cityTemperature: Int
+    var body: some View {
+        VStack(spacing:20) {
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 180, height: 160)
+            
+            
+            Text("\(cityTemperature)")
+                .font(.system(size: 65, weight: .medium))
+                .foregroundColor(.white)
+                .frame(width: 150, height: 50)
+        }
+        .padding(.bottom,40)
     }
 }

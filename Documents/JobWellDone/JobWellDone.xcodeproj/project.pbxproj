@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6BBE1F9271FF2D600058D3C /* ButtonWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBE1F8271FF2D500058D3C /* ButtonWeather.swift */; };
 		B6DFE1832719BA8A005EA20C /* JobWellDoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFE1822719BA8A005EA20C /* JobWellDoneApp.swift */; };
 		B6DFE1852719BA8A005EA20C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFE1842719BA8A005EA20C /* ContentView.swift */; };
 		B6DFE1872719BA98005EA20C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6DFE1862719BA98005EA20C /* Assets.xcassets */; };
 		B6DFE18A2719BA98005EA20C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6DFE1892719BA98005EA20C /* Preview Assets.xcassets */; };
-		B6DFE199271D43DF005EA20C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFE198271D43DF005EA20C /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6BBE1F8271FF2D500058D3C /* ButtonWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWeather.swift; sourceTree = "<group>"; };
 		B6DFE17F2719BA8A005EA20C /* JobWellDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobWellDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6DFE1822719BA8A005EA20C /* JobWellDoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobWellDoneApp.swift; sourceTree = "<group>"; };
 		B6DFE1842719BA8A005EA20C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6DFE1862719BA98005EA20C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6DFE1892719BA98005EA20C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6DFE18B2719BA98005EA20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6DFE198271D43DF005EA20C /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 				B6DFE1862719BA98005EA20C /* Assets.xcassets */,
 				B6DFE18B2719BA98005EA20C /* Info.plist */,
 				B6DFE1882719BA98005EA20C /* Preview Content */,
-				B6DFE198271D43DF005EA20C /* Cell.swift */,
+				B6BBE1F8271FF2D500058D3C /* ButtonWeather.swift */,
 			);
 			path = JobWellDone;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			files = (
 				B6DFE1852719BA8A005EA20C /* ContentView.swift in Sources */,
 				B6DFE1832719BA8A005EA20C /* JobWellDoneApp.swift in Sources */,
-				B6DFE199271D43DF005EA20C /* Cell.swift in Sources */,
+				B6BBE1F9271FF2D600058D3C /* ButtonWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
